@@ -11,7 +11,6 @@ This project includes two ip tools: IP-FINDER and PORT-SCANNER.
   - [Installation](#installation)
 - [IP-FINDER](#ip-finder)
 - [PORT-SCANNER](#port-scanner)
-- [Usage](#Usage)
 
 
 ## About the Project
