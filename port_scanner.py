@@ -1,8 +1,8 @@
-import sys
 import socket
 from datetime import datetime
 import os
 import time
+import sys
 
 def pulseEffect(text):
     pulse_colors = ['\033[90m', '\033[37m', '\033[97m', '\033[37m', '\033[90m']
@@ -34,8 +34,28 @@ github: https://github.com/Amirprx3
         '''
     )
 
+def scan(target):
+    try:
+        for port in range(1, 65535):
+            sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            socket.setdefaulttimeout(1)
+            result = sock.connect_ex((target, port))
+            if result == 0:
+                print(f"[+]Port {port}: Open")
+            sock.close()
+    except KeyboardInterrupt:
+        print("\nExiting Program.")
+        sys.exit()
+    except socket.gaierror:
+        print("\nHostname Could Not Be Resolved.")
+        sys.exit()
+    except socket.error:
+        print("\nServer not responding.")
+        sys.exit()
+
 def main():
-    target = input(str("[+] Target IP: "))
+    port_scanner_banner()
+    target = input("[+] Target IP: ")
 
     print("_" * 50)
     print("Scanning Target: " + target)
@@ -43,24 +63,6 @@ def main():
     print("Scanning started at: " + current_time)
     print("_" * 50)
     scan(target)
-
-def scan(target):
-    try:
-        for port in range(1, 65536):
-            sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            socket.setdefaulttimeout(0.5)
-
-            result = sock.connect_ex((target, port))
-            if result == 0:
-                print(f"[*] Port {port} is open")
-            sock.close()
-    except KeyboardInterrupt:
-        print("\n[!] Exiting :(")
-        sys.exit()
-
-    except socket.error:
-        print("\n Host not responding :(")
-        sys.exit()
 
 if __name__ == "__main__":
     main()
