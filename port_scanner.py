@@ -3,6 +3,7 @@ from datetime import datetime
 import os
 import time
 import sys
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 def pulseEffect(text):
     pulse_colors = ['\033[90m', '\033[37m', '\033[97m', '\033[37m', '\033[90m']
@@ -29,20 +30,33 @@ $$ |      $$    $$/ $$ |  $$ |   $$ |        $$    $$/ $$    $$/ $$ |  $$ |$$ | 
 $$/        $$$$$$/  $$/   $$/    $$/          $$$$$$/   $$$$$$/  $$/   $$/ $$/   $$/ $$/   $$/ $$$$$$$$/ $$/   $$/ 
 
 made by: Amirprx3
-github: https://github.com/Amirprx3    
+github: https://github.com/Amirprx3
 
         '''
     )
 
-def scan(target):
+def scan_port(target, port):
     try:
-        for port in range(1, 65535):
-            sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            socket.setdefaulttimeout(1)
-            result = sock.connect_ex((target, port))
-            if result == 0:
-                print(f"[+]Port {port}: Open")
-            sock.close()
+        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        socket.setdefaulttimeout(1)
+        result = sock.connect_ex((target, port))
+        if result == 0:
+            return f"[+] Port {port}: Open"
+        sock.close()
+    except Exception as e:
+        return None
+    return None
+
+def scan(target):
+    open_ports = []
+    try:
+        with ThreadPoolExecutor(max_workers=500) as executor:
+            futures = [executor.submit(scan_port, target, port) for port in range(1, 65536)]
+            for future in as_completed(futures):
+                result = future.result()
+                if result:
+                    print(result)
+                    open_ports.append(result)
     except KeyboardInterrupt:
         print("\nExiting Program.")
         sys.exit()
