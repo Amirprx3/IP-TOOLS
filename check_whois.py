@@ -41,7 +41,7 @@ $$ \__/  |$$ |  $$ |$$ |_____ $$ \__/  |$$ |$$  \       $$$$/  $$$$ |$$ |  $$ |$
 $$    $$/ $$ |  $$ |$$       |$$    $$/ $$ | $$  |      $$$/    $$$ |$$ |  $$ |$$    $$/ / $$   |$$    $$/ 
  $$$$$$/  $$/   $$/ $$$$$$$$/  $$$$$$/  $$/   $$/       $$/      $$/ $$/   $$/  $$$$$$/  $$$$$$/  $$$$$$/  
 
-Enhanced WHOIS Checker v2.0
+Enhanced WHOIS Checker v3.0
 made by: Amirprx3 (Enhanced)
 github: https://github.com/Amirprx3  
             '''
