@@ -48,7 +48,7 @@ $$ |      $$ \__$$ |$$ |  $$ |   $$ |        /  \__$$ |$$ \__/  |$$ |  $$ |$$ |$
 $$ |      $$    $$/ $$ |  $$ |   $$ |        $$    $$/ $$    $$/ $$ |  $$ |$$ | $$$ |$$ | $$$ |$$       |$$ |  $$ |
 $$/        $$$$$$/  $$/   $$/    $$/          $$$$$$/   $$$$$$/  $$/   $$/ $$/   $$/ $$/   $$/ $$$$$$$$/ $$/   $$/ 
 
-Enhanced Port Scanner v2.0
+Enhanced Port Scanner v3.0
 made by: Amirprx3 (Enhanced)
 github: https://github.com/Amirprx3
 '''
