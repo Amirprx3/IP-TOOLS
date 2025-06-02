@@ -136,11 +136,6 @@ class IPToolsManager:
 ║   • Improved WHOIS data parsing and display                                   ║
 ║   • Added progress indicators and loading animations                          ║
 ║                                                                               ║
-║  [+]  DISCLAIMER:                                                             ║
-║   This tool is for educational and authorized testing purposes only.          ║
-║   Users are responsible for complying with all applicable laws and            ║
-║   regulations. Unauthorized scanning or testing is prohibited.                ║
-║                                                                               ║
 ║  [+] CONTACT:                                                                 ║
 ║   GitHub: https://github.com/Amirprx3                                         ║
 ║   Original Author: Amirprx3                                                   ║
